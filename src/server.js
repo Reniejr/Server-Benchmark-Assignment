@@ -6,7 +6,7 @@ const express = require('express'),
 //ROUTES IMPORTS
 const { examRoute } = require('./Routes/exam/examRoute'),
     { answerRoute } = require('./Routes/answers/answerRoute')
-
+const { userRoute } = require('./Routes/user/userRoute')
 //ERRORS ROUTES IMPORTS
 const { notFound, unAuthorized, forbidden, badRequest, genericError } = require('./errorsHandling')
 
@@ -36,6 +36,7 @@ server.use(cors(corsOptions))
 //ROUTES
 server.use('/exam', examRoute)
 server.use('/exam', answerRoute)
+server.use('/exam/user', userRoute)
 
 //ERRORS ROUTES
 server.use(notFound)
